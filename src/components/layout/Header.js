@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Header() {
+const Header = () => {
   return (
     <nav>
       <a href="/" className="brand">Weather Forecast App</a>
@@ -11,3 +11,5 @@ export default function Header() {
     </nav>
   );
 }
+
+export default Header;

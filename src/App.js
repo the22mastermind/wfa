@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/public/Header';
-import LandingPage from './components/public/LandingPage';
+import Header from './components/layout/Header';
+import LandingPage from './components/pages/LandingPage';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <React.Fragment>

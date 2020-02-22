@@ -1,7 +1,7 @@
 import React from 'react';
 import widget from '../../assets/img/widget.svg';
 
-export default function LandingPage() {
+const LandingPage = () => {
   return (
     <div className="landing-page-container">
       <div className="landing-page-content">
@@ -16,3 +16,5 @@ export default function LandingPage() {
     </div>
   );
 }
+
+export default LandingPage;
