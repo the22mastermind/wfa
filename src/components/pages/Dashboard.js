@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import _ from 'lodash';
 import moment from 'moment';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import Loader from 'react-loader-spinner';
 
 const Dashboard = () => {
   const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState({});
 
   const handleForm = async (e) => {
     e.preventDefault();
+    setLoading(true);
     await axios({
       "method": "GET",
       "url": "https://community-open-weather-map.p.rapidapi.com/find",
@@ -24,6 +28,7 @@ const Dashboard = () => {
     })
       .then((response) => {
         setData(response.data.list[0]);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -42,6 +47,9 @@ const Dashboard = () => {
             />
             <input type="submit" value="Submit" className="search-submit" />
           </form>
+        </div>
+        <div className="flex-center">
+          {loading ? <Loader type="Puff" color="#E69646" height={50} width={50} /> : null}
         </div>
         {_.isEmpty(data) ? null :
           <div className="result-wrapper">

@@ -104,6 +104,12 @@ body,
   height: 100%;
   margin: 0;
 }
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
 /* End of content */
 
 @media (max-width: 575.98px) {
