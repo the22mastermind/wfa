@@ -1,12 +1,6 @@
-# wfa
-# announceIT
+# WFA - Weather Forecasts App
 
-AnnounceIT is a solution for broadcasting agencies which allows them to be able to receive and manage announcements.
-
-
-###### User Interface (https://the22mastermind.github.io/announceIT/)
-###### API Docs (https://documenter.getpostman.com/view/10187591/SWTD6vra?version=latest)
-
+WFA is a solution for broadcasting agencies which allows them to be able to receive and manage announcements.
 
 ### Prerequisites
 To be able to run this project on your local machine you need to install Nodejs along with npm.
@@ -16,6 +10,7 @@ Click [here](https://nodejs.org/en/download/) to download and install Nodejs.
 Open your terminal and run `npm install npm@latest -g` to install npm globally on your system.
 
 To check if Nodejs and npm are installed, open your terminal and run `node -v && npm -v`.
+
 It should display the version number you have installed. 
 
 ### Installation
