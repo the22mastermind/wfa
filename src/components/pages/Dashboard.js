@@ -4,36 +4,49 @@ import _ from 'lodash';
 import moment from 'moment';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Loader from 'react-loader-spinner';
+import Forecast from './Forecast';
 
 const Dashboard = () => {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
+  const [cityName, setCityName] = useState("");
+  const [showForecast, setShowForecast] = useState(false);
 
   const handleForm = async (e) => {
     e.preventDefault();
+    setShowForecast(false);
     setLoading(true);
     await axios({
       "method": "GET",
-      "url": "https://community-open-weather-map.p.rapidapi.com/find",
+      "url": "https://community-open-weather-map.p.rapidapi.com/weather",
       "headers": {
         "content-type": "application/octet-stream",
         "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-        "x-rapidapi-key": "20f00be919mshec328dc8ae44925p136c56jsnae066c75dd0c"
+        "x-rapidapi-key": process.env.REACT_APP_API_KEY
       }, "params": {
-        "type": "link%2C accurate",
-        "units": "imperial%2C metric",
-        "q": `${query}`
+        "callback": "test",
+        "id": "2172797",
+        "units": "%22metric%22 or %22imperial%22",
+        "mode": "xml%2C html",
+        "q": query
       }
     })
       .then((response) => {
-        setData(response.data.list[0]);
+        const parsedData = JSON.parse(response.data.slice(5, -1));
+        setData(parsedData);
+        setCityName(parsedData.name);
         setLoading(false);
       })
       .catch((error) => {
         console.log(error);
       })
   }
+
+  const handleViewForecast = () => {
+    setShowForecast(true);
+  }
+
   return (
     <div className="container dashboard">
       <div className="dashboard-content">
@@ -44,6 +57,7 @@ const Dashboard = () => {
               placeholder="Enter your city here"
               className="search-box"
               onChange={(e) => setQuery(e.target.value)}
+              required
             />
             <input type="submit" value="Submit" className="search-submit" />
           </form>
@@ -51,7 +65,7 @@ const Dashboard = () => {
         <div className="flex-center">
           {loading ? <Loader type="Puff" color="#E69646" height={50} width={50} /> : null}
         </div>
-        {_.isEmpty(data) ? null :
+        {_.isEmpty(data) ? null : showForecast ? <Forecast cityName={cityName} /> :
           <div className="result-wrapper">
             <div className="result-title">Weather in {data.name}, {data.sys.country} </div>
             <div className="result-date mb20">{moment(data.dt, 'X').format('LLL')} </div>
@@ -79,25 +93,27 @@ const Dashboard = () => {
                     <td className="label">HUMIDITY</td>
                     <td className="value">{data.main.humidity} %</td>
                   </tr>
-                  <tr>
-                    <td className="label">RAIN</td>
-                    <td className="value">{data.rain} mm</td>
-                  </tr>
+                  {data.visibility ?
+                    <tr>
+                      <td className="label">VISIBILITY</td>
+                      <td className="value">{data.visibility} m</td>
+                    </tr>
+                    : null
+                  }
+                  {data.rain ?
+                    <tr>
+                      <td className="label">RAIN</td>
+                      <td className="value">{data.rain} mm</td>
+                    </tr>
+                    : null
+                  }
                   <tr>
                     <td className="label">WINDS</td>
-                    <td className="value">{data.wind.speed} m/s, {data.wind.deg} º</td>
+                    <td className="value">{data.wind.speed} m/s, {data.wind.deg}º</td>
                   </tr>
                   <tr>
                     <td className="label">CLOUDS</td>
                     <td className="value">{data.clouds.all}</td>
-                  </tr>
-                  <tr>
-                    <td className="label">SEAL LEVEL</td>
-                    <td className="value">{data.main.sea_level ? data.main.sea_level : 'N/A'}</td>
-                  </tr>
-                  <tr>
-                    <td className="label">GROUND LEVEL</td>
-                    <td className="value">{data.main.grnd_level ? data.main.grnd_level : 'N/A'} m</td>
                   </tr>
                   <tr>
                     <td className="label">SUNRISE</td>
@@ -110,7 +126,7 @@ const Dashboard = () => {
                 </tbody>
               </table>
             </div>
-            <a href="/forecast" className="cta-btn forecast-btn">View forecast</a>
+            <button onClick={handleViewForecast} className="cta-btn forecast-btn">View forecast</button>
           </div>
         }
       </div>
