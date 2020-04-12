@@ -1,6 +1,6 @@
 # WFA - Weather Forecasts App
 
-WFA is a solution for broadcasting agencies which allows them to be able to receive and manage announcements.
+WFA is a web application that hepls users to get weather information and forecasts in their cities.
 
 ### Prerequisites
 To be able to run this project on your local machine you need to install Nodejs along with npm.
