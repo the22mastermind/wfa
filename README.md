@@ -1,5 +1,7 @@
 [![the22mastermind](https://circleci.com/gh/the22mastermind/wfa.svg?style=svg)](https://app.circleci.com/pipelines/github/the22mastermind/wfa)
 [![Generic badge](https://img.shields.io/badge/Awesomeness-100/100-<COLOR>.svg)](https://shields.io/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/02c51db57963b731a3aa/maintainability)](https://codeclimate.com/github/the22mastermind/wfa/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/02c51db57963b731a3aa/test_coverage)](https://codeclimate.com/github/the22mastermind/wfa/test_coverage)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
 # WFA - Weather Forecasts App
