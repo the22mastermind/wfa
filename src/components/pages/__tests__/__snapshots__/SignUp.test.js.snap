@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the Sign Up snapshot 1`] = `
+<div
+  className="container"
+>
+  <form
+    className="form-wrapper"
+  >
+    <div
+      className="form-title"
+    >
+      Sign Up
+    </div>
+    <div
+      className="names"
+    >
+      <input
+        className="input"
+        placeholder="First name"
+        required={true}
+        type="text"
+      />
+      <input
+        className="input"
+        placeholder="Last name"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="input-wrapper"
+    >
+      <input
+        className="input"
+        placeholder="Email"
+        required={true}
+        type="email"
+      />
+    </div>
+    <div
+      className="input-wrapper"
+    >
+      <input
+        className="input"
+        placeholder="Phone"
+        required={true}
+        type="telephone"
+      />
+    </div>
+    <div
+      className="input-wrapper"
+    >
+      <input
+        className="input"
+        placeholder="Password"
+        required={true}
+        type="password"
+      />
+    </div>
+    <div
+      className="input-wrapper"
+    >
+      <input
+        className="input"
+        placeholder="Confirm password"
+        required={true}
+        type="password"
+      />
+    </div>
+    <div
+      className="submit-btn-wrapper"
+    >
+      <input
+        className="submit-btn"
+        type="submit"
+        value="Sign up"
+      />
+    </div>
+    <p
+      className="alt-wrapper"
+    >
+      <span
+        className="alt-text"
+      >
+        Already registered?
+      </span>
+      <a
+        className="link"
+        href="/signin"
+      >
+        Sign in
+      </a>
+    </p>
+  </form>
+</div>
+`;

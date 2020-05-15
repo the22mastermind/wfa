@@ -1,0 +1,22 @@
+orbs:
+  node: circleci/node@2.0.2
+
+version: 2.1
+jobs:
+  run_tests:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            npm install
+      - run:
+          name: Run tests
+          command: |
+            npm test
+workflows:
+  build-test:
+    jobs:
+      - run_tests

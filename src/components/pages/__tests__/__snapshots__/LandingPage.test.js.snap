@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the Landing Page snapshot 1`] = `
+<div
+  className="landing-page-container"
+>
+  <div
+    className="landing-page-content"
+  >
+    <div
+      className="landing-page-text"
+    >
+      <div
+        className="landing-page-title"
+      >
+        Get real-time weather conditions and forecasts in your city
+      </div>
+      <a
+        className="cta-btn"
+        href="/signup"
+      >
+        Get started
+      </a>
+    </div>
+    <div
+      className="landing-page-widget"
+    >
+      <img
+        alt="Weather widget"
+        className="st-widget"
+        src="widget.svg"
+      />
+    </div>
+  </div>
+</div>
+`;

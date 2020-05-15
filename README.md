@@ -1,3 +1,5 @@
+[![the22mastermind](https://circleci.com/gh/the22mastermind/wfa.svg?style=svg)](https://app.circleci.com/pipelines/github/the22mastermind/wfa)
+
 # WFA - Weather Forecasts App
 
 WFA is a web application that hepls users to get weather information and forecasts in their cities.
@@ -27,4 +29,4 @@ It should display the version number you have installed.
 Bertrand 'B' Masabo
 
 ### Contributors
-The Alpha Team
+The Champions
