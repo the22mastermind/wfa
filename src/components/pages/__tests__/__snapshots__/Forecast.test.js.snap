@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the Forecast snapshot 1`] = `
+<div
+  className="forecast-wrapper"
+>
+  <div
+    className="flex-center"
+  />
+  <div
+    className="result-title"
+  >
+    5 Day Forecast (3 hour interval)
+  </div>
+</div>
+`;

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the Header snapshot 1`] = `
+<nav>
+  <a
+    className="brand"
+    href="/"
+  >
+    Weather Forecast App
+  </a>
+  <ul
+    className="nav-links"
+  >
+    <li>
+      <a
+        className="link"
+        href="/signup"
+      >
+        Sign Up
+      </a>
+    </li>
+    <li>
+      <a
+        className="small-btn"
+        href="/signin"
+      >
+        Sign In
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

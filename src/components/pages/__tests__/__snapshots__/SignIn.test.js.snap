@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the Sign In snapshot 1`] = `
+<div
+  className="container"
+>
+  <form
+    className="form-wrapper"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-title"
+    >
+      Sign In
+    </div>
+    <div
+      className="input-wrapper"
+    >
+      <input
+        className="input"
+        placeholder="Email"
+        required={true}
+        type="email"
+      />
+    </div>
+    <div
+      className="input-wrapper"
+    >
+      <input
+        className="input"
+        placeholder="Password"
+        required={true}
+        type="password"
+      />
+    </div>
+    <div
+      className="submit-btn-wrapper"
+    >
+      <input
+        className="submit-btn"
+        type="submit"
+        value="Sign in"
+      />
+    </div>
+  </form>
+</div>
+`;

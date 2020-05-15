@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the Dashboard snapshot 1`] = `
+<div
+  className="container dashboard"
+>
+  <div
+    className="dashboard-content"
+  >
+    <div
+      className="search-wrapper"
+    >
+      <form
+        className="search-form"
+        onSubmit={[Function]}
+      >
+        <input
+          className="search-box"
+          onChange={[Function]}
+          placeholder="Enter your city here"
+          required={true}
+          type="text"
+        />
+        <input
+          className="search-submit"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+    <div
+      className="flex-center"
+    />
+  </div>
+</div>
+`;
