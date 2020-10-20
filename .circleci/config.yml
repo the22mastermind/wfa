@@ -4,18 +4,16 @@ orbs:
 version: 2.1
 jobs:
   run_tests:
+    environment:
+      CC_TEST_REPORTER_ID: 5805e4e5ce7beb47d9e4e870ce671c415413a997ba7e59b4aebf639232aa4e15
     docker:
       - image: circleci/node:12
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: |
-            npm install
-      - run:
-          name: Run tests
-          command: |
-            npm test
+      - run: npm install
+      - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      - run: chmod +x ./cc-test-reporter
+      - run: npm test
 workflows:
   build-test:
     jobs:
